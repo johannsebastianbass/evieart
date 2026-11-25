@@ -50,7 +50,7 @@ def main():
     banner = ROOT / "assets" / "banner.webp"
     if not banner.exists():
         try:
-            save(open_rgb(get([data["banner"]])), banner, 2400)
+            save(open_rgb(get([data["banner"]])), banner, 2400, 90)
         except Exception as e:
             failed.append(str(e))
     for b in data["books"]:

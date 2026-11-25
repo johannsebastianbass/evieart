@@ -1,6 +1,6 @@
-# Evie Ceccon · Children's book illustrator
+# Evelys Ceccon · Children's book illustrator
 
-Portfolio site for Evelys "Evie" Ceccon, built from her Behance profile (https://www.behance.net/eviececcon).
+Portfolio site for Evelys Ceccon, built from her Behance profile (https://www.behance.net/eviececcon).
 
 - `index.html`: the whole site (painted cover, books gallery with a page-by-page book viewer, about, themes, contact).
 - `i18n.js`: all site text in English, Portuguese, Spanish, Italian, German and French. English is the default; the choice is remembered and can be linked with `?lang=pt` (or `es`, `it`, `de`, `fr`).

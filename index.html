@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Evie Ceccon</title>
+<title>Evelys Ceccon</title>
 <meta name="description" content="Evelys Ceccon, children's book illustrator from Brazil. Whimsical, nature-inspired illustrations with a touch of magic.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +39,9 @@ h1,h2,h3{font-family:Grandstander,"Comic Sans MS",system-ui,sans-serif;line-heig
 .langs button[aria-pressed=true]{background:var(--red);color:#fff}
 .langs button:focus-visible,.btn:focus-visible,.book:focus-visible,.links a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 /* cover */
-.cover{position:relative;min-height:min(92svh,820px);display:grid;align-items:end;background:linear-gradient(#cfe6f3,#e9dcf3 70%,#f6d7e2);overflow:hidden}
+.cover{position:relative;min-height:clamp(560px,36vw,760px);display:grid;align-items:end;background:linear-gradient(#cfe6f3,#e9dcf3 70%,#f6d7e2);overflow:hidden}
 .cover .art{position:absolute;inset:0}
-.cover .art svg,.cover .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cover .art svg,.cover .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .cover .art img.off{display:none}
 .hero{position:relative;z-index:2;margin:0 max(5vw,16px) clamp(28px,5vw,64px);max-width:600px;background:rgba(255,250,243,.94);border-radius:36px 36px 36px 8px;padding:clamp(24px,3vw,40px);box-shadow:0 10px 0 rgba(61,42,77,.08)}
 .hero h1{font-size:clamp(50px,7vw,92px);color:var(--ink)}
@@ -125,7 +125,7 @@ footer.band{padding-block:26px}
 <body>
 <header class="cover" id="top">
   <nav class="nav" aria-label="Main">
-    <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 17C3 8 10 4 16 4s13 4 14 13c-8 2-20 2-28 0z" fill="#e2574c"/><rect x="12" y="17" width="8" height="11" rx="3" fill="#fff3e0"/><circle cx="10" cy="11" r="2.5" fill="#fff"/><circle cx="19" cy="8" r="2" fill="#fff"/></svg>Evie Art</a>
+    <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 17C3 8 10 4 16 4s13 4 14 13c-8 2-20 2-28 0z" fill="#e2574c"/><rect x="12" y="17" width="8" height="11" rx="3" fill="#fff3e0"/><circle cx="10" cy="11" r="2.5" fill="#fff"/><circle cx="19" cy="8" r="2" fill="#fff"/></svg>Evelys Ceccon</a>
     <div class="links">
       <a href="#books" data-i="nav.books">Books</a>
       <a href="#about" data-i="nav.about">About</a>
@@ -156,7 +156,7 @@ footer.band{padding-block:26px}
     <img id="heroImg" src="assets/banner.webp" alt="">
   </div>
   <div class="hero">
-    <h1>Evie Ceccon</h1>
+    <h1>Evelys Ceccon</h1>
     <div class="role" data-i="hero.role">Children's book illustrator</div>
     <p data-i="hero.lead">Picture books full of fairies, gentle animals, starry nights and the simple magic of nature.</p>
     <div class="btns">
@@ -180,7 +180,7 @@ footer.band{padding-block:26px}
 <section class="band about" id="about">
   <div class="wrap">
     <div>
-      <h2 data-i="about.title">Hello, I'm Evie</h2>
+      <h2 data-i="about.title">Hello, I'm Evelys</h2>
       <p data-i="about.p1">My name is Evelys, and I'm an illustrator from Brazil. I'm inspired by the simple things in life, especially nature.</p>
       <p data-i="about.p2">I'm not afraid of getting lost in the world of fantasy, so my art is a little fanciful, always with a touch of magic. I paint digitally in Procreate.</p>
       <div class="facts">
@@ -248,7 +248,7 @@ footer.band{padding-block:26px}
 <script src="i18n.js"></script>
 <script>
 {
-/* All of Evie's books and pages come from data.js (generated from assets.json).
+/* All of Evelys's books and pages come from data.js (generated from assets.json).
    Images are served from assets/ once the fetch-images workflow has run; until then,
    or if a file is missing, they fall back to Behance's CDN, then to a painted placeholder. */
 const E=window.EVIE,BOOKS=E.books;
