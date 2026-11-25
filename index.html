@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evie Ceccon</title>
+<meta name="description" content="Evelys Ceccon, children's book illustrator from Brazil. Whimsical, nature-inspired illustrations with a touch of magic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 17C3 8 10 4 16 4s13 4 14 13c-8 2-20 2-28 0z' fill='%23e2574c'/%3E%3Crect x='12' y='17' width='8' height='11' rx='3' fill='%23fff3e0'/%3E%3Ccircle cx='10' cy='11' r='2.5' fill='%23fff'/%3E%3Ccircle cx='19' cy='8' r='2' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/* VOICE occasion: a children's book illustrator's portfolio, soft and magical like her paintings
+   IDEA the site is one of her picture books: a painted meadow cover, then pages of her books on grainy paper
+   PICTURE her own mushroom banner full-bleed on the cover (painted SVG meadow as fallback), then her 12 covers large
+   COLOUR taken from her work: misty sky blue, lavender, petal pink, mushroom red, fresh meadow green, warm paper
+   TYPE Grandstander (round storybook lettering) + Nunito
+   LAYOUT laptop: banner fills the cover, title on a soft paper card bottom-left; phone: banner band, card overlapping it */
+:root{color-scheme:light;--paper:#fffaf3;--ink:#3d2a4d;--soft:#76668a;--sky:#cfe6f3;--lav:#d9c9ef;--pink:#f6bfd0;--red:#e2574c;--green:#7fb85a;--deep:#4f6e3a;--sun:#f6c453;--card:#fff;--line:#eadcf0}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Grandstander,"Comic Sans MS",system-ui,sans-serif;line-height:1.05;letter-spacing:-.02em;margin:0;font-weight:800;text-wrap:balance}
+.band{padding-block:clamp(44px,6vw,92px);padding-left:max(5vw,16px,env(safe-area-inset-left,0px));padding-right:max(5vw,16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto}
+/* nav */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:14px max(5vw,16px)}
+.logo{font-family:Grandstander,system-ui,sans-serif;font-weight:800;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px;margin-right:auto;background:rgba(255,250,243,.88);padding:8px 16px 8px 10px;border-radius:999px}
+.logo svg{width:28px;height:28px}
+.links{display:flex;gap:4px;flex-wrap:wrap;background:rgba(255,250,243,.88);border-radius:999px;padding:4px}
+.links a{text-decoration:none;font-weight:800;padding:8px 14px;border-radius:999px}
+.links a:hover{background:var(--pink)}
+.langs{display:flex;gap:2px;background:rgba(255,250,243,.88);border-radius:999px;padding:4px}
+.langs button{font:800 13px/1 Nunito,sans-serif;color:var(--ink);background:none;border:0;border-radius:999px;padding:9px 10px;min-width:40px;min-height:36px;cursor:pointer}
+.langs button:hover{background:var(--lav)}
+.langs button[aria-pressed=true]{background:var(--red);color:#fff}
+.langs button:focus-visible,.btn:focus-visible,.book:focus-visible,.links a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+/* cover */
+.cover{position:relative;min-height:min(92svh,820px);display:grid;align-items:end;background:linear-gradient(#cfe6f3,#e9dcf3 70%,#f6d7e2);overflow:hidden}
+.cover .art{position:absolute;inset:0}
+.cover .art svg,.cover .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.cover .art img.off{display:none}
+.hero{position:relative;z-index:2;margin:0 max(5vw,16px) clamp(28px,5vw,64px);max-width:600px;background:rgba(255,250,243,.94);border-radius:36px 36px 36px 8px;padding:clamp(24px,3vw,40px);box-shadow:0 10px 0 rgba(61,42,77,.08)}
+.hero h1{font-size:clamp(50px,7vw,92px);color:var(--ink)}
+.hero .role{font-family:Grandstander,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);color:var(--red);margin:10px 0 10px}
+.hero p{font-size:18px;margin:0 0 22px;color:var(--soft)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:800 16px/1 Nunito,sans-serif;text-decoration:none;padding:15px 24px;border-radius:999px;background:var(--red);color:#fff;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+@media (prefers-reduced-motion:reduce){.btn,.book{transition:none}html{scroll-behavior:auto}}
+/* section heads */
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 32px;margin-bottom:34px}
+.head h2{font-size:clamp(36px,5vw,56px)}
+.head p{margin:0;max-width:32em;color:var(--soft)}
+.wave{display:block;width:100%;height:40px}
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.6vw,34px)}
+.book{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:var(--card);border-radius:20px;padding:12px 12px 16px;box-shadow:0 0 0 2px var(--line),0 8px 0 var(--line);transition:transform .2s}
+.book:nth-child(3n+1){transform:rotate(-1.2deg)}.book:nth-child(3n+3){transform:rotate(1deg)}
+.book:hover{transform:rotate(0) translateY(-4px)}
+.book .pic{display:block;aspect-ratio:808/632;border-radius:12px;overflow:hidden;background:var(--sky)}
+.book img{width:100%;height:100%;object-fit:cover}
+.pic.off{background:radial-gradient(circle at 74% 28%,var(--sun) 0 8%,transparent 9%),linear-gradient(var(--sky),var(--lav) 66%,var(--green) 67%)}
+.pic.off img{visibility:hidden}
+.book h3{font-size:20px;margin:14px 6px 0;font-weight:700}
+/* lightbox */
+dialog{border:0;border-radius:24px;padding:0;max-width:min(980px,94vw);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(61,42,77,.7)}
+dialog{width:min(1100px,96vw)}
+.stage{position:relative;background:var(--sky);display:grid;place-items:center;height:min(68vh,720px)}
+.stage img{max-width:100%;max-height:100%;object-fit:contain}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,250,243,.92);color:var(--ink);font:800 30px/1 Nunito,sans-serif;cursor:pointer}
+.nav-btn:hover{background:#fff}.nav-btn:focus-visible{outline:3px solid var(--red)}
+.prev{left:10px}.next{right:10px}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;scroll-snap-type:x mandatory;background:var(--paper)}
+.thumbs button{flex:none;border:0;padding:0;border-radius:8px;overflow:hidden;width:78px;aspect-ratio:4/3;cursor:pointer;opacity:.6;scroll-snap-align:center;background:var(--lav)}
+.thumbs button[aria-current=true]{opacity:1;outline:3px solid var(--red);outline-offset:-3px}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.count{color:var(--soft);font-size:15px}
+.book .n{display:block;margin:2px 6px 0;color:var(--soft);font-size:15px}
+.lb{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 20px}
+.lb h3{font-size:24px}
+.lb .btn{padding:12px 18px;font-size:15px}
+/* about */
+.about{background:var(--sky)}
+.about .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:center}
+.about h2{font-size:clamp(36px,5vw,56px);margin-bottom:18px}
+.about p{margin:0 0 14px;max-width:34em}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.facts div{background:rgba(255,250,243,.8);border-radius:16px;padding:14px 16px}
+.facts b{display:block;font-family:Grandstander,sans-serif;font-size:19px}
+.facts span{font-size:15px;color:var(--soft)}
+.polaroids{position:relative;aspect-ratio:1.15;max-width:560px;width:100%;justify-self:center}
+.polaroids figure{position:absolute;margin:0;background:#fff;padding:10px 10px 30px;border-radius:6px;box-shadow:0 8px 0 rgba(61,42,77,.1);width:62%}
+.polaroids figure:nth-child(1){left:0;top:4%;transform:rotate(-6deg)}
+.polaroids figure:nth-child(2){right:0;top:28%;transform:rotate(5deg)}
+.polaroids .pic{display:block;aspect-ratio:808/632;overflow:hidden;background:var(--lav);border-radius:3px}
+.polaroids img{width:100%;height:100%;object-fit:cover}
+.polaroids figcaption{font-family:Grandstander,sans-serif;font-size:15px;text-align:center;margin-top:8px;color:var(--soft)}
+/* themes */
+.themes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.theme{background:var(--card);border-radius:22px;padding:22px;box-shadow:0 0 0 2px var(--line)}
+.theme svg{width:58px;height:58px;margin-bottom:12px}
+.theme h3{font-size:22px;margin-bottom:6px}
+.theme p{margin:0;color:var(--soft);font-size:16px}
+/* contact */
+.contact{background:var(--pink)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
+.contact h2{font-size:clamp(36px,5.2vw,62px);margin-bottom:12px}
+.contact p{margin:0 0 6px;max-width:34em;font-size:18px}
+.contact .mail{font-weight:800}
+.contact .btns{justify-content:flex-end}
+footer{background:var(--deep);color:#eef5e6;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+footer.band{padding-block:26px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.themes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.about .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}.contact .btns{justify-content:flex-start}.polaroids{max-width:420px}}
+@media (max-width:600px){.links{display:none}.cover{min-height:0;display:block;padding-top:84vw}.cover .art{bottom:auto;height:100vw;min-height:340px}.hero{margin:-40px 12px 24px;border-radius:28px}.grid,.themes{grid-template-columns:minmax(0,1fr)}.book{transform:none!important}.facts{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="cover" id="top">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 17C3 8 10 4 16 4s13 4 14 13c-8 2-20 2-28 0z" fill="#e2574c"/><rect x="12" y="17" width="8" height="11" rx="3" fill="#fff3e0"/><circle cx="10" cy="11" r="2.5" fill="#fff"/><circle cx="19" cy="8" r="2" fill="#fff"/></svg>Evie Art</a>
+    <div class="links">
+      <a href="#books" data-i="nav.books">Books</a>
+      <a href="#about" data-i="nav.about">About</a>
+      <a href="#contact" data-i="nav.contact">Contact</a>
+    </div>
+    <div class="langs" role="group" aria-label="Language" id="langs"></div>
+  </nav>
+  <div class="art">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="sunG"><stop offset="0" stop-color="#fff3c2"/><stop offset=".35" stop-color="#fbe08f" stop-opacity=".9"/><stop offset="1" stop-color="#fbe08f" stop-opacity="0"/></radialGradient>
+        <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7b3e6"/><stop offset="1" stop-color="#b59ad8"/></linearGradient>
+        <linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7d17c"/><stop offset="1" stop-color="#7fb85a"/></linearGradient>
+        <linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93c86a"/><stop offset="1" stop-color="#6aa449"/></linearGradient>
+        <g id="cloud"><circle cx="0" cy="0" r="34" fill="#fff"/><circle cx="40" cy="-14" r="44" fill="#fff"/><circle cx="88" cy="0" r="32" fill="#fff"/><rect x="0" y="0" width="88" height="32" fill="#fff"/></g>
+        <g id="shroom"><path d="M-14 0 C-16 40 -12 70 -10 90 H10 C12 70 16 40 14 0Z" fill="#fff6ea"/><path d="M-70 4 C-64 -50 -26 -78 0 -78 S64 -50 70 4 C30 14 -30 14 -70 4Z"/><circle cx="-34" cy="-30" r="9" fill="#fff" opacity=".9"/><circle cx="6" cy="-54" r="8" fill="#fff" opacity=".9"/><circle cx="36" cy="-22" r="11" fill="#fff" opacity=".9"/></g>
+      </defs>
+      <circle cx="1240" cy="170" r="210" fill="url(#sunG)"/>
+      <use href="#cloud" transform="translate(220 150) scale(1.1)" opacity=".9"/>
+      <use href="#cloud" transform="translate(760 90) scale(.8)" opacity=".8"/>
+      <use href="#cloud" transform="translate(1380 300) scale(.7)" opacity=".85"/>
+      <path d="M0 600 C220 520 420 560 620 590 S1000 520 1220 560 1480 540 1600 560 V900 H0Z" fill="url(#h1)" opacity=".8"/>
+      <path d="M0 700 C260 630 480 680 740 690 S1140 630 1400 670 1600 650 1600 650 V900 H0Z" fill="url(#h2)"/>
+      <g id="shrooms"></g>
+      <path d="M0 800 C300 750 560 790 820 780 S1300 740 1600 770 V900 H0Z" fill="url(#h3)"/>
+      <g id="flowers"></g>
+    </svg>
+    <img id="heroImg" src="assets/banner.webp" alt="">
+  </div>
+  <div class="hero">
+    <h1>Evie Ceccon</h1>
+    <div class="role" data-i="hero.role">Children's book illustrator</div>
+    <p data-i="hero.lead">Picture books full of fairies, gentle animals, starry nights and the simple magic of nature.</p>
+    <div class="btns">
+      <a class="btn" href="#books" data-i="hero.cta">See the books</a>
+      <a class="btn ghost" href="#contact" data-i="hero.cta2">Work with me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band" id="books">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i="books.title">Stories I have illustrated</h2>
+      <p data-i="books.lead">Each book is its own little world. Tap a cover to open it.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="band about" id="about">
+  <div class="wrap">
+    <div>
+      <h2 data-i="about.title">Hello, I'm Evie</h2>
+      <p data-i="about.p1">My name is Evelys, and I'm an illustrator from Brazil. I'm inspired by the simple things in life, especially nature.</p>
+      <p data-i="about.p2">I'm not afraid of getting lost in the world of fantasy, so my art is a little fanciful, always with a touch of magic. I paint digitally in Procreate.</p>
+      <div class="facts">
+        <div><b data-i="fact.1a">Picture books</b><span data-i="fact.1b">Covers and full interiors</span></div>
+        <div><b data-i="fact.2a">Brazil</b><span data-i="fact.2b">Working with authors worldwide</span></div>
+        <div><b data-i="fact.3a">Available</b><span data-i="fact.3b">Freelance and full time</span></div>
+      </div>
+    </div>
+    <div class="polaroids" id="polaroids"></div>
+  </div>
+</section>
+
+<section class="band" id="themes">
+  <div class="wrap">
+    <div class="head"><h2 data-i="themes.title">What I love to draw</h2></div>
+    <div class="themes">
+      <div class="theme"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#fbe1e8"/><path d="M12 32 C13 20 22 14 28 14 S43 20 44 32 C34 35 22 35 12 32Z" fill="#e2574c"/><rect x="23" y="32" width="10" height="12" rx="3" fill="#fff6ea"/><circle cx="21" cy="25" r="3" fill="#fff"/><circle cx="33" cy="21" r="2.5" fill="#fff"/><path d="M28 44 V39 a2.5 2.5 0 0 1 5 0 V44" fill="#a0673c" transform="translate(-2.5 0)"/></svg><h3 data-i="t1.h">Fairies and tiny homes</h3><p data-i="t1.p">Secret kingdoms hidden under mushrooms and leaves.</p></div>
+      <div class="theme"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#e4f1d8"/><path d="M28 46 V24" stroke="#4f6e3a" stroke-width="3"/><path d="M28 30 C20 30 16 24 16 18 C24 18 28 22 28 30Z M28 26 C36 26 40 20 40 14 C32 14 28 18 28 26Z" fill="#7fb85a"/></svg><h3 data-i="t2.h">Nature and seasons</h3><p data-i="t2.p">Gardens, seashells, meadows and beautiful days outside.</p></div>
+      <div class="theme"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#ebe2f7"/><path d="M34 14 A14 14 0 1 0 42 36 A11 11 0 1 1 34 14Z" fill="#f6c453"/><circle cx="16" cy="18" r="2" fill="#9b82c9"/><circle cx="44" cy="22" r="1.6" fill="#9b82c9"/></svg><h3 data-i="t3.h">Bedtime and dreams</h3><p data-i="t3.p">Quiet, starry scenes to read just before sleep.</p></div>
+      <div class="theme"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#fdeacb"/><ellipse cx="29" cy="34" rx="13" ry="11" fill="#e2574c"/><path d="M29 23 V45" stroke="#3d2a4d" stroke-width="2"/><circle cx="16" cy="30" r="7" fill="#3d2a4d"/><circle cx="24" cy="30" r="2.4" fill="#3d2a4d"/><circle cx="34" cy="36" r="2.4" fill="#3d2a4d"/><circle cx="23" cy="39" r="2" fill="#3d2a4d"/></svg><h3 data-i="t4.h">Gentle animals</h3><p data-i="t4.p">Kind little characters who travel, learn and feel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2 data-i="contact.title">Have a story that needs pictures?</h2>
+      <p data-i="contact.lead">I'd love to hear about your book. Write to me and tell me about your characters, your world and your timeline.</p>
+      <p class="mail">evelyssc@gmail.com</p>
+    </div>
+    <div class="btns">
+      <a class="btn" href="mailto:evelyssc@gmail.com" data-i="contact.email">Send an email</a>
+      <a class="btn ghost" href="https://instagram.com/evieart__" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn ghost" href="https://www.behance.net/eviececcon" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="band">
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Evelys Ceccon · <span data-i="footer.rights">All illustrations are the artist's own. Please do not reuse without permission.</span></span>
+    <a href="https://instagram.com/evieart__" target="_blank" rel="noopener">@evieart__</a>
+  </div>
+</footer>
+
+<dialog id="lb" aria-labelledby="lbTitle">
+  <div class="stage">
+    <img id="lbImg" alt="">
+    <button class="nav-btn prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <button class="nav-btn next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="thumbs" id="lbThumbs"></div>
+  <div class="lb">
+    <div><h3 id="lbTitle"></h3><span class="count" id="lbCount"></span></div>
+    <div class="btns">
+      <a class="btn ghost" id="lbLink" target="_blank" rel="noopener" data-i="lb.more">See on Behance</a>
+      <button class="btn" id="lbClose" data-i="lb.close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script>
+{
+/* All of Evie's books and pages come from data.js (generated from assets.json).
+   Images are served from assets/ once the fetch-images workflow has run; until then,
+   or if a file is missing, they fall back to Behance's CDN, then to a painted placeholder. */
+const E=window.EVIE,BOOKS=E.books;
+const CDN='https://mir-s3-cdn-cf.behance.net/';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nn=i=>String(i+1).padStart(2,'0');
+const src={
+ cover:b=>['assets/books/'+b.id+'/cover.webp',CDN+'projects/808/'+b.cover],
+ page:(b,i)=>['assets/books/'+b.id+'/'+nn(i)+'.webp',CDN+'project_modules/1400/'+b.pages[i]],
+ thumb:(b,i)=>['assets/books/'+b.id+'/'+nn(i)+'-thumb.webp',CDN+'project_modules/max_632/'+b.pages[i]]};
+const img=([a,f],alt,lazy)=>`<img ${lazy?'loading="lazy"':''} src="${esc(a)}" data-cdn="${esc(f)}" alt="${esc(alt)}">`;
+const fallback=im=>{if(im.dataset.fb)return;im.dataset.fb=1;const step=()=>{if(im.dataset.cdn&&!im.dataset.tried){im.dataset.tried=1;im.src=im.dataset.cdn;}else if(im.parentNode.classList.contains('pic'))im.parentNode.classList.add('off');};im.addEventListener('error',step);if(im.complete&&!im.naturalWidth&&im.getAttribute('src'))step();};
+const arm=root=>root.querySelectorAll('img[data-cdn]').forEach(fallback);
+const grid=document.getElementById('grid');
+grid.innerHTML=BOOKS.map((b,i)=>`<button class="book" data-n="${i}"><span class="pic">${img(src.cover(b),b.title,true)}</span><h3>${esc(b.title)}</h3><span class="n" data-count="${b.pages.length}"></span></button>`).join('');
+document.getElementById('polaroids').innerHTML=[6,3].map(n=>`<figure><span class="pic">${img(src.cover(BOOKS[n]),BOOKS[n].title,true)}</span><figcaption>${esc(BOOKS[n].title)}</figcaption></figure>`).join('');
+arm(document);
+const hero=document.getElementById('heroImg');hero.dataset.cdn=E.banner;
+hero.addEventListener('error',()=>{if(!hero.dataset.tried){hero.dataset.tried=1;hero.src=hero.dataset.cdn;}else hero.classList.add('off');});
+if(hero.complete&&!hero.naturalWidth){hero.dataset.tried=1;hero.src=hero.dataset.cdn;}
+/* book viewer */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),th=document.getElementById('lbThumbs');
+let cur=null,pg=0;
+const show=i=>{const b=cur;pg=(i+b.pages.length)%b.pages.length;const [a,f]=src.page(b,pg);
+ lbImg.removeAttribute('data-tried');lbImg.dataset.cdn=f;lbImg.src=a;lbImg.alt=b.title+' '+(pg+1);
+ document.getElementById('lbCount').textContent=(pg+1)+' / '+b.pages.length;
+ th.querySelectorAll('button').forEach((t,k)=>{t.setAttribute('aria-current',String(k===pg));if(k===pg)t.scrollIntoView({block:'nearest',inline:'center'});});};
+lbImg.addEventListener('error',()=>{if(!lbImg.dataset.tried){lbImg.dataset.tried=1;lbImg.src=lbImg.dataset.cdn;}});
+const open=n=>{cur=BOOKS[n];document.getElementById('lbTitle').textContent=cur.title;document.getElementById('lbLink').href='https://www.behance.net/gallery/'+cur.behance;
+ th.innerHTML=cur.pages.map((_,k)=>`<button type="button" data-k="${k}" aria-label="${k+1}">${img(src.thumb(cur,k),'',true)}</button>`).join('');arm(th);
+ lb.showModal();show(0);};
+grid.addEventListener('click',e=>{const t=e.target.closest('.book');if(t)open(+t.dataset.n);});
+th.addEventListener('click',e=>{const t=e.target.closest('button');if(t)show(+t.dataset.k);});
+document.getElementById('lbPrev').onclick=()=>show(pg-1);
+document.getElementById('lbNext').onclick=()=>show(pg+1);
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(pg-1);if(e.key==='ArrowRight')show(pg+1);});
+let x0=null;lbImg.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+lbImg.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(pg+(dx<0?1:-1));x0=null;});
+document.getElementById('lbClose').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close();});
+
+/* painted meadow (shown until/unless the banner image loads), seeded so it is stable */
+let s=11;const rnd=()=>(s=s*16807%2147483647)/2147483647;
+const sh=[[1060,640,1.5,'#f2a7bf'],[1250,690,1.1,'#d9b8ee'],[1400,620,.9,'#f6bfd0'],[930,700,.7,'#e2574c'],[300,700,.8,'#d9b8ee'],[160,660,.6,'#f2a7bf']];
+document.getElementById('shrooms').innerHTML=sh.map(([x,y,k,c])=>`<use href="#shroom" transform="translate(${x} ${y}) scale(${k})" fill="${c}"/>`).join('');
+let f='';const cols=['#f6bfd0','#f6c453','#fff','#c7b3e6','#e2574c'];for(let i=0;i<54;i++){const x=rnd()*1600,y=790+rnd()*100;f+=`<g transform="translate(${x.toFixed(0)} ${y.toFixed(0)})"><path d="M0 0 V14" stroke="#4f6e3a" stroke-width="2"/><circle r="5" fill="${cols[i%5]}"/><circle r="1.8" fill="#f6c453"/></g>`;}
+document.getElementById('flowers').innerHTML=f;
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* language switcher: EN default, then PT, ES, IT, DE, FR */
+const LANGS=['en','pt','es','it','de','fr'];
+const T=window.I18N;
+const box=document.getElementById('langs');
+box.innerHTML=LANGS.map(l=>`<button type="button" lang="${l}" data-l="${l}" title="${esc(T[l]._name)}">${l.toUpperCase()}</button>`).join('');
+const apply=l=>{if(!T[l])l='en';const d=T[l];document.documentElement.lang=l;
+ document.querySelectorAll('[data-i]').forEach(el=>{const v=d[el.dataset.i]??T.en[el.dataset.i];if(v!=null)el.textContent=v;});
+ document.querySelectorAll('[data-count]').forEach(el=>{el.textContent=(d['book.pages']||T.en['book.pages']).replace('{n}',el.dataset.count);});
+ document.title=d._title;document.querySelector('meta[name=description]').content=d._desc;
+ box.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===l)));
+ try{localStorage.setItem('evie-lang',l)}catch(e){}
+ try{const u=new URL(location.href);if(l==='en')u.searchParams.delete('lang');else u.searchParams.set('lang',l);history.replaceState(null,'',u);}catch(e){}};
+box.addEventListener('click',e=>{const b=e.target.closest('button');if(b)apply(b.dataset.l);});
+let start=null;try{start=new URL(location.href).searchParams.get('lang')}catch(e){}
+if(!start){try{start=localStorage.getItem('evie-lang')}catch(e){}}
+apply(LANGS.includes(start)?start:'en');
+}
+</script>
+</body>
+</html>
