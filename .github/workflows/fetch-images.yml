@@ -1,0 +1,29 @@
+name: Fetch illustrations from Behance
+
+# Downloads every image listed in assets.json into assets/ and commits them.
+# Run it from the Actions tab whenever assets.json changes.
+on:
+  workflow_dispatch:
+  push:
+    paths: [assets.json, tools/fetch_images.py]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==11.0.0
+      - run: python tools/fetch_images.py
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || git commit -m "Add illustrations from Behance"
+          git push
